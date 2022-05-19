@@ -1,15 +1,35 @@
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Conta implements Serializable {
     private String id;
     private String senha;
+    private String usuario;
     private BigDecimal saldo;
 
-    public Conta(String id, String senha, BigDecimal saldo) {
-        this.id = id;
+    private Map<String, Integer> tokens = new HashMap<>();
+
+    public Conta(String usuario, String senha, BigDecimal saldo) {
+        this.usuario = usuario;
         this.senha = senha;
         this.saldo = saldo;
+    }
+
+    public Map<String, Integer> getTokens() {
+        return tokens;
+    }
+
+    public void addToken(String token) {
+        this.tokens.put(token, 0);
+    }
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getId() {
@@ -41,6 +61,7 @@ public class Conta implements Serializable {
         return "Conta{" +
                 "id='" + id + '\'' +
                 ", senha='" + senha + '\'' +
+                ", usuario='" + usuario + '\'' +
                 ", saldo=" + saldo +
                 '}';
     }

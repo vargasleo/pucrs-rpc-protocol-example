@@ -13,7 +13,6 @@ public class CalculadoraCliente {
             //Procura pelo servico da calculadora no IP e porta definidos
             //var caixa = (Calculadora) Naming.lookup("rmi://localhost:1097/CalcService");
             var administrador = (Administrador) Naming.lookup("rmi://localhost:1099/AdmService");
-            var caixaAutomatico = (CaixaAutomatico) Naming.lookup("rmi://localhost:1099/CaixaService");
 
             System.out.println("1 - soma");
             System.out.println("2 - sub");
