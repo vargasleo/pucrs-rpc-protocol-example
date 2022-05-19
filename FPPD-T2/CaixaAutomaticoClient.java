@@ -1,7 +1,7 @@
 import java.rmi.Naming;
 import java.util.Scanner;
 
-public class CaixaAutomaticoCliente {
+public class CaixaAutomaticoClient {
 
     private static String contaAutenticada;
     private static String token;

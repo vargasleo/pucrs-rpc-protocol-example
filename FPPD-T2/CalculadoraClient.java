@@ -6,7 +6,7 @@
 import java.rmi.Naming;
 import java.util.Scanner;
 
-public class CalculadoraCliente {
+public class CalculadoraClient {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         try {
