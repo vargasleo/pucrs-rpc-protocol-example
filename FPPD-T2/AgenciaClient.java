@@ -25,7 +25,6 @@ public class AgenciaClient {
             System.out.println("5 - Consultar saldo");
             System.out.println("0 - sair");
             boolean exec = true;
-            double result;
             while (exec) {
                 int key = in.nextInt();
                 switch (key) {
@@ -38,7 +37,7 @@ public class AgenciaClient {
                             var senha = in.nextLine();
                             administrador.criarConta(usuario, senha, administrador.gerarRequestId());
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta: usuario ja existe");
+                            System.out.println(e);
                         }
                         break;
                     case 2:
@@ -46,7 +45,7 @@ public class AgenciaClient {
                             administrador.removerConta(contaAutenticada, administrador.gerarRequestId(), token);
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 3:
@@ -59,7 +58,7 @@ public class AgenciaClient {
                             token = administrador.autenticar(usuario, senha, administrador.gerarRequestId());
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 4:
@@ -69,7 +68,7 @@ public class AgenciaClient {
                             administrador.deposito(saldo, contaAutenticada, administrador.gerarRequestId(), token);
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 5:
@@ -79,7 +78,7 @@ public class AgenciaClient {
                             administrador.saque(saldo, contaAutenticada, administrador.gerarRequestId(), token);
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 6:
@@ -87,7 +86,7 @@ public class AgenciaClient {
                             administrador.consulta(contaAutenticada, administrador.gerarRequestId(), token);
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 0:

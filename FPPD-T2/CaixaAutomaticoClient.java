@@ -18,7 +18,6 @@ public class CaixaAutomaticoClient {
             System.out.println("4 - Consultar saldo");
             System.out.println("0 - sair");
             boolean exec = true;
-            double result;
 
             while (exec) {
 
@@ -34,7 +33,7 @@ public class CaixaAutomaticoClient {
                             token = administrador.autenticar(contaAutenticada, senha, administrador.gerarRequestId());
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 2:
@@ -44,7 +43,7 @@ public class CaixaAutomaticoClient {
                             administrador.deposito(saldo, contaAutenticada, administrador.gerarRequestId(), token);
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 3:
@@ -54,7 +53,7 @@ public class CaixaAutomaticoClient {
                             administrador.saque(saldo, contaAutenticada, administrador.gerarRequestId(), token);
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 4:
@@ -62,7 +61,7 @@ public class CaixaAutomaticoClient {
                             System.out.println("Seu saldo atual é:" + administrador.consulta(contaAutenticada, administrador.gerarRequestId(), token));
                             System.out.println("Criado com sucesso");
                         } catch (Exception e) {
-                            System.out.println("Erro ao criar conta");
+                            System.out.println(e);
                         }
                         break;
                     case 0:

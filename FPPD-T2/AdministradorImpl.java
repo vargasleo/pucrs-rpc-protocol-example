@@ -75,7 +75,7 @@ public class AdministradorImpl extends UnicastRemoteObject implements Administra
             return false;
         }
         contaAutenticada.setSaldo(contaAutenticada.getSaldo().add(saldo));
-        return true;
+        throw new RuntimeException("erro");
     }
 
     @Override
@@ -99,7 +99,7 @@ public class AdministradorImpl extends UnicastRemoteObject implements Administra
     }
 
     private void validateRequestId(String rqstId) {
-        if (requestIdList.get(rqstId) > 1) {
+        if (requestIdList.get(rqstId) > 0) {
             throw new RuntimeException("O request ja foi processado");
         }
         requestIdList.compute(rqstId, (k, v) -> v+1);
